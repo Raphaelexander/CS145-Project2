@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class Rectangle{
+public class Rectangle {
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Input the x1 coordinate:");
@@ -8,18 +9,16 @@ public class Rectangle{
         int x1 = input.nextInt();
         int y1 = input.nextInt();
         
-        if(x1 < 0 || y1 < 0) {
-            System.out.print("Invalid input, please input a positive integer");
-        } else {
-            System.out.println("\nInput the x4 coordinate:");
-            int x4 = input.nextInt();
-            int y4 = input.nextInt();
+        RectangleTest.testPointOne(x1, y1);
 
-            if(x4 < 0 || y4 < 0) {
-                System.out.print("Invalid input, please input a positive integer");
-            }
-        }
+        System.out.println("\nInput the x4 coordinate:");
+        int x4 = input.nextInt();
+        int y4 = input.nextInt();
 
-        //RectangleTest.newRectangle = RectangleTest.function(int x1, int y1, int x4, int y4);
+        RectangleTest.testPointFour(x4, y4);
+
+        RectangleTest.findPoints(x1, y1, x4, y4);
+        System.out.println("The area is " + RectangleTest.calculateArea(x1, y1, x4, y4));
+        System.out.print("The perimeter is " + RectangleTest.calculatePerimeter(x1, y1, x4, y4));
     }
 }
